@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centropay — Instant crypto. Real-world money.</title>
+  <meta name="description" content="Centropay turns holdings on Solana into spendable balance on a payment card, with a live market board built in.">
+  <meta property="og:title" content="Centropay — Instant crypto. Real-world money.">
+  <meta property="og:description" content="Wallet to card, built on Solana, with a live market board.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo-512.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="assets/logo-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- TOP: brand · contract-address slot · socials (always top-right, icon only) -->
+  <div class="top" id="top">
+    <div class="top-row container">
+      <a class="brand" href="#hero" aria-label="Centropay home">
+        <img src="assets/logo-192.png" width="40" height="40" alt="" class="brand-mark">
+        <span class="brand-name">Centropay</span>
+      </a>
+      <div class="ca" data-anchor="ca-slot" data-gate-exempt id="ca"></div>
+      <nav class="social" aria-label="Social links" data-anchor="social">
+        <span data-social="x" data-anchor="social-x"></span>
+        <span data-social="github" data-anchor="social-github"></span>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- 1 · HERO -->
+    <section class="hero" id="hero">
+      <div class="mesh" aria-hidden="true">
+        <i class="blob b1" data-depth="0.25"></i><i class="blob b2" data-depth="0.4"></i><i class="blob b3" data-depth="0.15"></i>
+        <span class="gridlines"></span>
+      </div>
+      <div class="container hero-in">
+        <div class="hero-copy">
+          <div class="pill" id="status-pill" data-anchor="status-pill"><i class="dot" aria-hidden="true"></i><span>Solana mainnet</span><b class="slot" id="slot">—</b></div>
+          <h1 class="h1 grad">Crypto in.<br>Cash out.<br>Seconds.</h1>
+          <p class="lead">Centropay shifts holdings from a self-held wallet onto a payment card in one hop. A conversion can finish in as little as two seconds, and Centropay keeps its own cut at zero percent.</p>
+          <div class="cta-row">
+            <a class="btn btn-solid" href="#market">Explore the board</a>
+            <a class="btn btn-ghost" href="#how">See the flow</a>
+          </div>
+          <ul class="chips">
+            <li><b>2 s</b><span>best-case conversion</span></li>
+            <li><b>0%</b><span>Centropay charge</span></li>
+            <li><b>1 hop</b><span>wallet to card</span></li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="ring r1" data-depth="0.2"></div>
+          <div class="ring r2" data-depth="0.35"></div>
+          <img class="hero-logo" data-depth="0.6" src="assets/logo-512.png" width="512" height="512" alt="Centropay mark" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · MARKET BOARD -->
+    <section class="sec sec-board" id="market" data-anchor="market">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow"><span class="eline"></span>Market board</p>
+          <h2 class="h2">What Solana traders are chasing this minute</h2>
+          <p class="sub">The ten most boosted Solana tokens, refreshed every minute from open market data. Row one is held for Centropay's own token.</p>
+        </header>
+        <div class="ticker is-skel" id="ticker" aria-label="Live price ticker"><span class="sk-bar wide"></span></div>
+        <div class="board" data-reveal>
+          <div class="mhead" aria-hidden="true"><span>#</span><span>Token</span><span>Price</span><span>24h</span><span>Volume 24h</span><span>Liquidity</span></div>
+          <ol class="mrows" id="rows"></ol>
+          <p class="board-note" id="market-note" role="status" data-state="loading">Loading market data…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · THE GAP (two-column comparison) -->
+    <section class="sec sec-96" id="gap">
+      <div class="container">
+        <header class="sec-head center" data-reveal>
+          <p class="eyebrow"><span class="eline"></span>The gap</p>
+          <h2 class="h2">Spending what you hold should not take a week</h2>
+          <p class="sub">Most routes between holdings and checkout pass through several hands. Every hand adds a delay, and many add a charge.</p>
+        </header>
+        <div class="two" data-stagger>
+          <article class="card spot" data-reveal>
+            <h3 class="h3">The usual road</h3>
+            <ol class="steps">
+              <li>Send tokens away from the wallet</li>
+              <li>Park them on a trading venue</li>
+              <li>Hold on while the transfer confirms</li>
+              <li>Swap into local currency</li>
+              <li>Order a payout toward some bank account</li>
+              <li>Linger through banking delays</li>
+            </ol>
+            <p class="tag tag-muted">Several fees · several waits</p>
+          </article>
+          <article class="card card-hi spot" data-reveal>
+            <h3 class="h3">The Centropay road</h3>
+            <ol class="steps steps-hi">
+              <li>Choose an amount</li>
+              <li>Balance arrives on a payment card</li>
+            </ol>
+            <p class="big-num grad"><span>~2</span> sec</p>
+            <p class="tag">One hop · 0% Centropay fee</p>
+          </article>
+        </div>
+        <p class="fine" data-reveal>Chain fees plus outside charges might remain, and prices drift as conditions change.</p>
+      </div>
+    </section>
+
+    <!-- 4 · PRINCIPLES (dark, orbit + 4 tiles) -->
+    <section class="sec sec-dark" id="principles">
+      <div class="glow-circle" aria-hidden="true"></div>
+      <div class="gridlines faint" aria-hidden="true"></div>
+      <div class="container">
+        <header class="sec-head center" data-reveal>
+          <p class="eyebrow"><span class="eline"></span>Principles</p>
+          <h2 class="h2 grad">Four ideas hold the product together</h2>
+        </header>
+        <div class="orbit" data-reveal aria-hidden="true">
+          <svg viewBox="0 0 600 360" role="img" aria-label="">
+            <g transform="translate(300 180)">
+              <g class="qp-orbit"><circle r="150" fill="none" stroke="var(--c-mid)" stroke-opacity=".35" stroke-dasharray="3 9"/><circle cx="150" r="7" fill="var(--c-cyan)"/><circle cx="-150" r="5" fill="var(--c-blue)"/></g>
+              <g class="qp-orbit qp-orbit--rev"><circle r="105" fill="none" stroke="var(--c-cyan)" stroke-opacity=".3"/><circle cy="-105" r="6" fill="var(--c-mid)"/></g>
+              <g class="qp-dots"><circle r="128" fill="none"/><circle cy="-128" r="3" fill="var(--c-cyan)"/><circle cx="111" cy="64" r="3" fill="var(--c-mid)"/><circle cx="-111" cy="64" r="3" fill="var(--c-blue)"/></g>
+              <circle r="56" fill="var(--c-bg)" stroke="var(--c-blue)" stroke-opacity=".6"/>
+              <image href="assets/logo-192.png" x="-38" y="-38" width="76" height="76"/>
+            </g>
+          </svg>
+        </div>
+        <div class="four" data-stagger>
+          <article class="tile-card spot" data-reveal><span class="num">01</span><h3>Speed first</h3><p>The target is a conversion that lands in about the time it takes to blink twice.</p></article>
+          <article class="tile-card spot" data-reveal><span class="num">02</span><h3>No markup</h3><p>Centropay adds no markup when value moves; our own fee line reads zero.</p></article>
+          <article class="tile-card spot" data-reveal><span class="num">03</span><h3>Ends on a card</h3><p>Value arrives where shops already look: a regular payment card.</p></article>
+          <article class="tile-card spot" data-reveal><span class="num">04</span><h3>Solana underneath</h3><p>Quick blocks and tiny chain fees keep the one-hop idea practical.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · NUMBERS (gap-px grid) -->
+    <section class="sec sec-96" id="numbers">
+      <div class="container">
+        <header class="sec-head center" data-reveal>
+          <p class="eyebrow"><span class="eline"></span>At a glance</p>
+          <h2 class="h2">Three figures that frame the promise</h2>
+        </header>
+        <div class="px3" data-stagger>
+          <div class="px-cell spot" data-reveal><b class="grad">2 s</b><span>quickest conversion we aim for</span></div>
+          <div class="px-cell spot" data-reveal><b class="grad">0%</b><span>charged by Centropay</span></div>
+          <div class="px-cell spot" data-reveal><b class="grad">1</b><span>step linking wallet with card</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · SOLANA BAND (dark, gradient title + plates) -->
+    <section class="sec sec-band" id="chain">
+      <div class="grain" aria-hidden="true"></div>
+      <div class="container">
+        <span class="eline" aria-hidden="true"></span>
+        <h2 class="h-mega grad" data-reveal>Solana-native</h2>
+        <div class="plates" data-stagger>
+          <div class="plate spot" data-reveal><h3>Quick finality</h3><p>Blocks settle fast enough to make a two-second goal realistic.</p></div>
+          <div class="plate spot" data-reveal><h3>Small network cost</h3><p>Moving value on chain costs a sliver of what older networks charge.</p></div>
+          <div class="plate spot" data-reveal><h3>Open ledger</h3><p>Anyone can inspect activity on chain; the board above reads it live.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · COMMITMENTS (3 cards) -->
+    <section class="sec" id="commit">
+      <div class="container">
+        <header class="sec-head center" data-reveal>
+          <p class="eyebrow"><span class="eline"></span>Commitments</p>
+          <h2 class="h2">How we intend to behave</h2>
+          <p class="sub">Promises are cheap, so each one below is written to be tested against what ships.</p>
+        </header>
+        <div class="three" data-stagger>
+          <article class="card spot" data-reveal><h3 class="h3">Say only what is true</h3><p>If a fact is not confirmed, this site leaves its slot empty rather than guess.</p></article>
+          <article class="card spot" data-reveal><h3 class="h3">Keep it plain</h3><p>One idea per screen, no maze of menus between you and your balance.</p></article>
+          <article class="card spot" data-reveal><h3 class="h3">Build in the open</h3><p>Code and documents will be published as soon as their links are confirmed.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · HOW (3 steps) -->
+    <section class="sec sec-tint" id="how">
+      <div class="container">
+        <header class="sec-head center" data-reveal>
+          <p class="eyebrow"><span class="eline"></span>The flow</p>
+          <h2 class="h2">Holdings in, spendable balance out</h2>
+        </header>
+        <div class="three wide" data-stagger>
+          <article class="step spot" data-reveal><span class="step-n">1</span><h3 class="h3">Hold</h3><p>Keep assets on-chain, inside any wallet you trust.</p></article>
+          <article class="step spot" data-reveal><span class="step-n">2</span><h3 class="h3">Convert</h3><p>Choose an amount and confirm once. Centropay takes care of what remains.</p></article>
+          <article class="step spot" data-reveal><span class="step-n">3</span><h3 class="h3">Spend</h3><p>Proceeds appear on a payment card, ready at checkout.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · APP PREVIEW (dark rounded card) -->
+    <section class="sec" id="app">
+      <div class="container">
+        <div class="qdl" data-reveal>
+          <div class="qdl-copy">
+            <p class="eyebrow mono"><span class="eline"></span>Interface preview</p>
+            <h2 class="h2 grad">Your balance, one tap from a card</h2>
+            <p class="sub">A first look at a screen under design: balance, quick actions and accounts in one view.</p>
+            <span class="btn btn-ghost is-inert" aria-disabled="true"><small>Status</small><strong>Design in progress</strong></span>
+          </div>
+          <div class="qdl-stage">
+            <img src="assets/app-preview.jpg" width="800" height="500" loading="lazy" alt="Preview of the Centropay interface on a phone">
+            <span class="qdl-sheen" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · ROADMAP (pills + cards) -->
+    <section class="sec" id="roadmap">
+      <div class="container">
+        <header class="sec-head center" data-reveal>
+          <p class="eyebrow"><span class="eline"></span>Roadmap</p>
+          <h2 class="h2">Four phases, in order</h2>
+        </header>
+        <div class="pills" role="tablist" aria-label="Roadmap phases" id="phase-tabs"></div>
+        <div class="three" id="phase-cards" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 11 · CLOSING CTA -->
+    <section class="sec sec-tint cta" id="cta">
+      <div class="container center">
+        <h2 class="h2" data-reveal>Watch the board while we build</h2>
+        <p class="sub" data-reveal>Prices above move on their own. Everything else here will update the moment it is confirmed.</p>
+        <a class="btn btn-solid btn-lg" href="#market" data-reveal>Revisit the board</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container foot-in">
+      <a class="brand" href="#hero" aria-label="Centropay home"><img src="assets/logo-64.png" width="32" height="32" alt="" class="brand-mark"><span class="brand-name">Centropay</span></a>
+      <p>© CENTROPAY · centropay.fun</p>
+      <p class="fine">Market data is informational and not financial advice.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

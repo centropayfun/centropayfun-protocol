@@ -1,0 +1,13 @@
+{
+  "name": "centropay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Centropay — instant crypto, real-world money, on Solana.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "verify": "node scripts/verify.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}

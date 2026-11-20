@@ -1,0 +1,41 @@
+/*
+ * TOKENS — the only file in the project that holds colour literals.
+ * Provenance (all sampled from pixels, none invented):
+ *   --c-bg     #051723  modal pixel of reference/CENTRO 1.jpg.jpeg (slide backdrop, 86017 samples)
+ *   --c-ink    #fbfbfb  text pixel of the same slide / white field of brand/LOGO CENTRO PNG...png
+ *   --c-cyan   #04f5fd  brightest opaque pixel of brand/LOGO CENTRO PNG...png (alpha > 250)
+ *   --c-mid    #02aafb  modal opaque pixel of the same logo
+ *   --c-blue   #0156fb  modal pixel of the logo's blue band (G 70-90, B > 240)
+ *   --c-deep   #0109d6  darkest saturated opaque pixel of the logo
+ *   --c-void   #000000  dominant backdrop pixel of brand/LOGO CENTRO JPG.jpg.jpeg
+ * Logo PNG IHDR: 8-bit colour type 6 (RGBA), 2000x2000, 85.8% alpha 0 with pure-black RGB
+ * under it, so every resize in the asset step is premultiplied.
+ */
+:root {
+  --c-bg: #051723;
+  --c-ink: #fbfbfb;
+  --c-cyan: #04f5fd;
+  --c-mid: #02aafb;
+  --c-blue: #0156fb;
+  --c-deep: #0109d6;
+  --c-void: #000000;
+
+  --color-accent: var(--c-cyan);
+
+  /* geometry — measured on the reference layout */
+  --r-btn: 4px;
+  --r-grid: 16px;
+  --r-card: 24px;
+  --r-pill: 999px;
+  --pad-sec: 96px;
+  --pad-sec-dark: 112px;
+  --pad-sec-sm: 80px;
+  --gutter: 16px;
+  --ease-ui: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-card: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-rise: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-ui: 150ms;
+}
+@media (min-width: 640px) {
+  :root { --gutter: 24px; }
+}
